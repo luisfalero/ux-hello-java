@@ -33,3 +33,10 @@ oc expose svc/ux-hello-java --name=ux-hello-java --port=8080
 ```shell
 oc create route edge --service=ux-hello-java --port=8080
 ```
+
+- Validate access to URL
+
+```shell
+oc rsh ux-hello-java-6-g2b9h
+curl http://bs-hello-java.<namespace>.svc.cluster.local:8080/bs/hello
+```
